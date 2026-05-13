@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// typewriter
 const Typewriter = ({ text }: { text: string }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -32,7 +31,6 @@ const Typewriter = ({ text }: { text: string }) => {
   );
 };
 
-// --- DICIONÁRIO DE TRADUÇÕES ---
 type Language = 'BR' | 'US' | 'ES';
 
 const translations = {
@@ -102,7 +100,8 @@ const translations = {
       DB: { title: "Database", desc: "PL/SQL, Tuning e Modelagem." },
       SENSEDIA: { title: "Sensedia", desc: "API Gateway e Governança." },
       FULLSTACK: { title: "Full Stack", desc: "Node.js, Java, React." },
-      API_ARCH: { title: "API Architecture", desc: "Design e consumo de APIs RESTful e SOAP em sistemas legados e modernos." }
+      API_ARCH: { title: "API Architecture", desc: "Design e consumo de APIs RESTful e SOAP em sistemas legados e modernos." },
+      ERP: { title: "Ecosystem Sync", desc: "Integrações pesadas entre ERPs, CRMs e sistemas logísticos via mensageria ou webhooks." }
     }
   },
   US: {
@@ -171,11 +170,12 @@ const translations = {
       DB: { title: "Database", desc: "PL/SQL, Tuning and Modeling." },
       SENSEDIA: { title: "Sensedia", desc: "API Gateway & Governance." },
       FULLSTACK: { title: "Full Stack", desc: "Node.js, Java, React." },
-      API_ARCH: { title: "API Architecture", desc: "Design and consumption of RESTful and SOAP APIs in legacy and modern systems." }
+      API_ARCH: { title: "API Architecture", desc: "Design and consumption of RESTful and SOAP APIs in legacy and modern systems." },
+      ERP: { title: "Ecosystem Sync", desc: "Heavy integrations between ERPs, CRMs, and logistics systems via messaging or webhooks." }
     }
   },
   ES: {
-    nav: { home: "Inicio", about: "Sobre mí", services: "Servicios", proyectos: "Proyectos", contact: "Contacto" },
+    nav: { home: "Inicio", about: "Sobre mí", services: "Servicios", projects: "Proyectos", contact: "Contacto" },
     hero: {
       s1: "Yo pienso.", s2: "Yo construyo.", s3: "Yo entrego.", stype: "Tú usas.",
       desc: "Desarrollador Full Stack y Arquitecto de Integraciones. Transformo desafíos corporativos complejos en ecosistemas escalables y seguros.",
@@ -185,7 +185,7 @@ const translations = {
       title: "Ingeniería de Software de Alto Impacto",
       subtitle: "No solo escribo código. Orquesto ecosistemas.",
       bullets: [
-        { label: "Experiencia Comprobada", text: "Más de 4 años en la primera línea de proyectos críticos para gigantes del mercado como Unimed y CPFL." },
+        { label: "Experiencia Comprobada", text: "Más de 4 años en la primera línea de proyectos críticos para gigantes del mercado como Unimed e CPFL." },
         { label: "El Núcleo del Negocio", text: "Experto en construir puentes seguros entre sistemas heredados y soluciones modernas en la nube." },
         { label: "Enfoque en el Rendimiento", text: "Diseñando arquitecturas de APIs con Sensedia y ORDS, resolviendo cuellos de botella." }
       ],
@@ -196,7 +196,7 @@ const translations = {
       step_title: "LA PIPELINE",
       step_subtitle: "CÓMO FUNCIONA",
       steps: [
-        { num: "/01", title: "Análisis Arquitectónico", desc: "Mapeo de tu cuello de botella, definición del alcance técnico y viabilidad." },
+        { num: "/01", title: "Análisis Arquitectónico", desc: "Mapeo de tu cuello de botella, definición del alcance técnico y viabilidade." },
         { num: "/02", title: "Desarrollo del Core", desc: "Creación de la arquitectura y automatización utilizando tecnología Enterprise-grade." },
         { num: "/03", title: "Deploy y Monitoreo", desc: "Entrega documentada con garantía de estabilidad, seguridad y sin sorpresas." }
       ],
@@ -229,18 +229,19 @@ const translations = {
       title: "Construyamos el siguiente nivel.",
       desc: "Trae tu desafío de arquitectura o integración. Respondo rápido.",
       form_title: "Enviar un mensaje",
-      form: { name: "Tu nombre", email: "Correo de contacto", msg: "Cuéntame sobre el proyecto actual...", btn: "Enviar Mensaje" },
+      form: { name: "Tu nombre", email: "Correo de contacto", msg: "Cuéntame sobre el proyecto actual...", btn: "Enviar Mensagem" },
       connect: "Conexiones Directas"
     },
     footer: "think. build. deliver.",
     nodes: {
       IA: { title: "Applied AI", desc: "Automatización y OCI AI Vector Search." },
-      OIC: { title: "Oracle OIC", desc: "Orquestación de sistemas en la nube." },
+      OIC: { title: "Oracle OIC", desc: "Orquestración de sistemas en la nube." },
       APEX: { title: "Oracle APEX", desc: "Low-code enterprise grade." },
       DB: { title: "Database", desc: "PL/SQL, Tuning y Modelado." },
-      SENSEDIA: { title: "Sensedia", desc: "API Gateway y Gobernanza." },
+      SENSEDIA: { title: "Sensedia", desc: "API Gateway y Governança." },
       FULLSTACK: { title: "Full Stack", desc: "Node.js, Java, React." },
-      API_ARCH: { title: "API Architecture", desc: "Diseño y consumo de APIs RESTful y SOAP en sistemas heredados y modernos." }
+      API_ARCH: { title: "API Architecture", desc: "Diseño y consumo de APIs RESTful e SOAP en sistemas legados y modernos." },
+      ERP: { title: "Ecosystem Sync", desc: "Integraciones pesadas entre ERPs, CRMs y sistemas logísticos vía REST/SOAP." }
     }
   }
 };
@@ -252,7 +253,6 @@ function App() {
   const [showToast, setShowToast] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // desktop = lg (1024px+)
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -268,7 +268,6 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Scroll / teclado só no desktop
   useEffect(() => {
     if (!isDesktop) return;
 
@@ -385,9 +384,10 @@ function App() {
 
   const apiNodes = [
     { id: 'IA' as const,          label: 'IA',        top: '5%',   left: '50%' },
-    { id: 'OIC' as const,         label: 'OIC',       top: '15%',  left: '85%' },
-    { id: 'APEX' as const,        label: 'APEX',      top: '50%',  left: '95%' },
-    { id: 'DB' as const,          label: 'DB',        top: '85%',  left: '85%' },
+    { id: 'OIC' as const,         label: 'OIC',       top: '12%',  left: '80%' },
+    { id: 'ERP' as const,         label: 'ERP/CRM',   top: '35%',  left: '92%' },
+    { id: 'APEX' as const,        label: 'APEX',      top: '60%',  left: '92%' },
+    { id: 'DB' as const,          label: 'DB',        top: '88%',  left: '80%' },
     { id: 'SENSEDIA' as const,    label: 'SENSEDIA',  top: '95%',  left: '50%' },
     { id: 'FULLSTACK' as const,   label: 'NODE.JS',   top: '85%',  left: '15%' },
     { id: 'FULLSTACK' as const,   label: 'REACT',     top: '60%',  left: '5%'  },
@@ -398,20 +398,16 @@ function App() {
   return (
     <div className={`w-full bg-black text-gray-300 selection:bg-purple-600 selection:text-white relative font-sans ${isDesktop ? 'h-screen overflow-hidden' : 'min-h-screen overflow-x-hidden'}`}>
 
-     {/* ── NAVBAR CORRIGIDA ── */}
       <header className="fixed top-0 w-full z-[100] bg-black/80 backdrop-blur-md border-b border-gray-900">
         <nav className="h-16 md:h-20 lg:h-20 2xl:h-24 flex items-center justify-between px-6 lg:px-12 max-w-screen-2xl mx-auto w-full relative">
 
-          {/* 1. ESQUERDA: Seletor Mobile ou Logo Desktop */}
           <div className="flex items-center z-50">
-            {/* Seletor Mobile (SOME no desktop) */}
             <div className="flex lg:hidden gap-2 text-xs font-mono font-bold bg-gray-900/50 px-3 py-1.5 rounded-full border border-gray-800 shrink-0">
               {(['BR', 'US', 'ES'] as Language[]).map(l => (
                 <button key={l} onClick={() => setLang(l)} className={`transition-colors ${lang === l ? 'text-purple-400' : 'text-gray-500'}`}>{l}</button>
               ))}
             </div>
 
-            {/* Logo Desktop (Fica na ESQUERDA, SOME no mobile) */}
             <div className="hidden lg:flex font-bold text-3xl tracking-tight cursor-pointer select-none shrink-0" onClick={handleLogoClick} title="Easter Egg 👀">
               {"molina.dev".split('').map((char, i) => {
                 const isDev = i >= 6;
@@ -426,10 +422,7 @@ function App() {
             </div>
           </div>
 
-          {/* 2. CENTRO ABSOLUTO:*/}
           <div className="absolute left-1/2 -translate-x-1/2 z-40 flex items-center justify-center">
-            
-            {/* Logo Mobile  */}
             <div className="flex lg:hidden font-bold text-xl md:text-2xl tracking-tight cursor-pointer select-none shrink-0" onClick={handleLogoClick} title="Easter Egg 👀">
               {"molina.dev".split('').map((char, i) => {
                 const isDev = i >= 6;
@@ -443,7 +436,6 @@ function App() {
               })}
             </div>
 
-            {/* Links Desktop (Fica no CENTRO, SOME no mobile) */}
             <div className="hidden lg:flex gap-6 xl:gap-10 font-medium text-sm xl:text-base 2xl:text-lg text-gray-400">
               {(['home', 'about', 'services', 'projects', 'contact'] as const).map((item, idx) => (
                 <button key={item} onClick={() => navigateTo(idx, item)} className={`hover:text-purple-400 transition-colors ${activeSection === idx ? 'text-purple-500' : ''}`}>
@@ -453,9 +445,7 @@ function App() {
             </div>
           </div>
 
-          {/* 3. DIREITA: Seletor Desktop ou Hambúrguer Mobile */}
           <div className="flex items-center justify-end z-50">
-            {/* Seletor Desktop */}
             <div className="hidden lg:flex gap-3 text-xs xl:text-sm font-mono font-bold bg-gray-900/50 px-4 py-2 rounded-full border border-gray-800">
               {(['BR', 'US', 'ES'] as Language[]).map((l, i) => (
                 <React.Fragment key={l}>
@@ -465,7 +455,6 @@ function App() {
               ))}
             </div>
 
-            {/* Hambúrguer Mobile */}
             <button className="lg:hidden text-white p-2 ml-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               {isMobileMenuOpen
                 ? <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
@@ -473,22 +462,19 @@ function App() {
               }
             </button>
           </div>
-
         </nav>
-        
-        {/* Menu mobile */}
-                {isMobileMenuOpen && (
-                  <div className="lg:hidden fixed inset-0 top-16 bg-black h-screen flex flex-col items-center justify-center gap-10 z-[90]">
-                    {(['home', 'about', 'services', 'projects', 'contact'] as const).map((item, idx) => (
-                      <button key={item} onClick={() => navigateTo(idx, item)} className="text-2xl font-bold text-white hover:text-purple-500 transition-colors">
-                        {t.nav[item]}
-                      </button>
-                    ))}
-                  </div>
-                )}
+
+        {isMobileMenuOpen && (
+          <div className="lg:hidden fixed inset-0 top-16 bg-black h-screen flex flex-col items-center justify-center gap-10 z-[90]">
+            {(['home', 'about', 'services', 'projects', 'contact'] as const).map((item, idx) => (
+              <button key={item} onClick={() => navigateTo(idx, item)} className="text-2xl font-bold text-white hover:text-purple-500 transition-colors">
+                {t.nav[item]}
+              </button>
+            ))}
+          </div>
+        )}
       </header>
 
-      {/* ── MODAL API CORE ── */}
       {activeNode && (
         <div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 animate-[fadeIn_0.2s_ease-out]">
           <div className="bg-[#050505] border border-cyan-500 rounded-2xl p-6 sm:p-10 max-w-lg w-full shadow-[0_0_80px_rgba(34,211,238,0.2)] relative">
@@ -500,18 +486,12 @@ function App() {
         </div>
       )}
 
-      {/* ── WRAPPER DE SEÇÕES ── */}
       <div className={`w-full flex flex-col ${isDesktop ? 'h-[500vh] transition-transform duration-[1200ms]' : ''}`} style={isDesktop ? { transform: `translateY(-${activeSection * 100}vh)` } : {}}>
 
-        {/* ══════════════════════════════════════
-            BLOCO 0 — HERO
-        ══════════════════════════════════════ */}
         <section id="home" className={`w-full relative flex items-center overflow-hidden ${isDesktop ? 'h-screen pt-10' : 'min-h-[100svh] pt-24 pb-16'}`}>
           <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-purple-900/15 rounded-full blur-[100px] pointer-events-none -z-10" />
 
           <div className="px-6 lg:px-12 max-w-screen-2xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-10 2xl:gap-16 items-center w-full">
-
-            {/* texto hero */}
             <div className="flex-1 space-y-4 lg:space-y-5 2xl:space-y-6 w-full z-10 text-center lg:text-left">
               <h1 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-6xl 2xl:text-7xl font-extrabold text-white leading-[1.1] tracking-tight">
                 <span className="block">{t.hero.s1}</span>
@@ -527,15 +507,12 @@ function App() {
               </div>
             </div>
 
-            {/* Diagrama API CORE */}
             <div className="flex flex-1 justify-center w-full relative items-center mt-6 lg:mt-0">
               <div className="relative w-full max-w-[260px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[360px] xl:max-w-[420px] 2xl:max-w-[540px] aspect-square flex items-center justify-center mx-auto">
-
                 <div className="absolute w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-28 lg:h-28 2xl:w-40 2xl:h-40 rounded-full border border-purple-500 bg-purple-900/20 flex items-center justify-center animate-[pulse_4s_cubic-bezier(0.4,0,0.6,1)_infinite] shadow-[0_0_40px_rgba(168,85,247,0.3)] z-20">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 lg:w-20 lg:h-20 2xl:w-32 2xl:h-32 rounded-full border-2 border-dashed border-purple-500/50 animate-[spin_20s_linear_infinite]" />
                   <span className="absolute text-purple-400 font-mono font-bold tracking-widest text-[7px] sm:text-[9px] lg:text-[10px] 2xl:text-base z-30">API_CORE</span>
                 </div>
-
                 <svg className="absolute inset-0 w-full h-full opacity-25 pointer-events-none z-0" viewBox="0 0 550 550">
                   <circle cx="275" cy="275" r="180" fill="none" stroke="#22d3ee" strokeWidth="1" strokeDasharray="4 4" className="animate-[spin_50s_linear_infinite_reverse]"/>
                   <line x1="275" y1="185" x2="275" y2="20" stroke="#22d3ee" strokeWidth="1"/>
@@ -547,31 +524,24 @@ function App() {
                   <line x1="211" y1="339" x2="95" y2="455" stroke="#22d3ee" strokeWidth="1"/>
                   <line x1="211" y1="211" x2="95" y2="95" stroke="#22d3ee" strokeWidth="1"/>
                 </svg>
-
                 {apiNodes.map((node, i) => (
                   <button key={node.id + i} onClick={() => setActiveNode(node.id)}
                     className="absolute -translate-x-1/2 -translate-y-1/2 border-2 border-cyan-500/80 bg-black/90 backdrop-blur-md rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:scale-110 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] transition-all duration-300 z-30 group cursor-pointer animate-[floating_6s_ease-in-out_infinite]
                       w-10 h-10 lg:w-12 lg:h-12 2xl:w-20 2xl:h-20"
                     style={{ top: node.top, left: node.left, animationDelay: `${i * 0.5}s` }}>
-                    <span className="text-[6px] lg:text-[7px] 2xl:text-xs font-mono text-cyan-400 font-bold group-hover:text-white transition-colors">{node.label}</span>
+                    <span className="text-[6px] lg:text-[7px] 2xl:text-xs font-mono text-cyan-400 font-bold group-hover:text-white transition-colors text-center px-1">{node.label}</span>
                   </button>
                 ))}
               </div>
             </div>
-
           </div>
           {isDesktop && <NextArrow />}
         </section>
 
-        {/* ══════════════════════════════════════
-            BLOCO 1 — SOBRE MIM
-        ══════════════════════════════════════ */}
         <section id="about" className={`w-full relative bg-[#030303] flex items-center justify-center overflow-hidden border-t border-gray-900/50 ${isDesktop ? 'h-screen' : 'min-h-[100svh] py-24'}`}>
           {isDesktop && <PrevArrow />}
           <div className="px-6 lg:px-12 max-w-screen-2xl mx-auto w-full">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-8 xl:gap-12 2xl:gap-24 relative">
-
-              {/* Coluna esquerda */}
               <div onMouseEnter={() => setHoveredSection('about')} onMouseLeave={() => setHoveredSection(null)}
                 className={`transition-all duration-700 ${hoveredSection === 'skills' ? 'lg:blur-md lg:opacity-10 lg:grayscale' : 'opacity-100'} cursor-default flex flex-col justify-center`}
               >
@@ -580,7 +550,6 @@ function App() {
                   <h3 className="text-base sm:text-lg lg:text-xl 2xl:text-2xl text-purple-400 mt-2 2xl:mt-3 font-light">{t.about.subtitle}</h3>
                 </div>
                 <div className="w-16 h-1.5 2xl:w-20 2xl:h-2 bg-purple-500 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.8)] mt-4 2xl:mt-6" />
-
                 <div className="space-y-4 lg:space-y-5 2xl:space-y-6 mt-6 2xl:mt-8">
                   {t.about.bullets.map((bullet, idx) => (
                     <div key={idx} className="flex gap-3 2xl:gap-4 items-start">
@@ -593,8 +562,6 @@ function App() {
                   ))}
                 </div>
               </div>
-
-              {/* Coluna direita */}
               <div onMouseEnter={() => setHoveredSection('skills')} onMouseLeave={() => setHoveredSection(null)}
                 className={`bg-[#080808] border border-gray-900/50 p-6 lg:p-6 xl:p-8 2xl:p-12 rounded-3xl flex flex-col justify-center transition-all duration-700 ${hoveredSection === 'about' ? 'lg:blur-md lg:opacity-10 lg:grayscale lg:scale-95' : 'opacity-100 scale-100'} hover:border-purple-500/40 cursor-default shadow-2xl`}
               >
@@ -613,13 +580,9 @@ function App() {
           {isDesktop && <NextArrow />}
         </section>
 
-        {/* ══════════════════════════════════════
-            BLOCO 2 — SERVIÇOS
-        ══════════════════════════════════════ */}
         <section id="services" className={`w-full relative bg-black flex flex-col justify-center overflow-hidden border-t border-gray-900/50 ${isDesktop ? 'h-screen' : 'min-h-[100svh] py-24'}`}>
           {isDesktop && <PrevArrow />}
           <div className="px-6 lg:px-12 max-w-screen-2xl mx-auto w-full">
-
             <div className="mb-6 lg:mb-8 2xl:mb-12">
               <h3 className="text-lg lg:text-xl 2xl:text-2xl font-bold text-white mb-4 2xl:mb-6 tracking-wider">{t.services.step_title}</h3>
               <div className="grid sm:grid-cols-3 gap-4 lg:gap-6 2xl:gap-8">
@@ -632,10 +595,7 @@ function App() {
                 ))}
               </div>
             </div>
-
             <div className="w-full h-px bg-gray-900 mb-6 lg:mb-8 2xl:mb-10" />
-
-            {/* Cards */}
             <div>
               <h3 className="text-lg lg:text-xl 2xl:text-2xl font-bold text-white mb-4 2xl:mb-6 tracking-wider">{t.services.do_title}</h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 2xl:gap-5">
@@ -647,22 +607,15 @@ function App() {
                 ))}
               </div>
             </div>
-
           </div>
           {isDesktop && <NextArrow />}
         </section>
 
-        {/* ══════════════════════════════════════
-            BLOCO 3 — PROJETOS
-        ══════════════════════════════════════ */}
         <section id="projects" className={`w-full relative bg-[#030303] flex items-center overflow-hidden border-t border-gray-900/50 ${isDesktop ? 'h-screen' : 'min-h-[100svh] py-24'}`}>
           {isDesktop && <PrevArrow />}
           <div className="px-6 lg:px-12 max-w-screen-2xl mx-auto w-full">
             <h2 className="text-2xl sm:text-4xl lg:text-[2.5rem] 2xl:text-6xl font-bold text-white tracking-tight mb-6 lg:mb-8 2xl:mb-10 text-center lg:text-left">{t.projects.title}</h2>
-
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 2xl:gap-12">
-
-              {/* Projeto 1 */}
               <div className="group bg-[#080808] border border-gray-800 rounded-2xl p-5 lg:p-6 2xl:p-8 hover:border-purple-500 hover:shadow-[0_0_40px_rgba(168,85,247,0.1)] transition-all duration-500 flex flex-col">
                 <div className="flex justify-between items-start mb-3 lg:mb-4">
                   <h3 className="text-xl sm:text-2xl lg:text-2xl 2xl:text-3xl font-bold text-white group-hover:text-purple-400 transition-colors">{t.projects.p1.name}</h3>
@@ -683,8 +636,6 @@ function App() {
                   <iframe src={t.projects.p1.link} className="absolute top-4 2xl:top-5 left-0 w-[200%] h-[200%] scale-50 origin-top-left pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity" tabIndex={-1} />
                 </div>
               </div>
-
-              {/* Projeto 2 */}
               <div className="group bg-[#080808] border border-gray-800 rounded-2xl p-5 lg:p-6 2xl:p-8 hover:border-cyan-500 hover:shadow-[0_0_40px_rgba(34,211,238,0.1)] transition-all duration-500 flex flex-col">
                 <div className="flex justify-between items-start mb-3 lg:mb-4">
                   <h3 className="text-xl sm:text-2xl lg:text-2xl 2xl:text-3xl font-bold text-white group-hover:text-cyan-400 transition-colors">{t.projects.p2.name}</h3>
@@ -705,35 +656,23 @@ function App() {
                   <iframe src={t.projects.p2.link} className="absolute top-4 2xl:top-5 left-0 w-[200%] h-[200%] scale-50 origin-top-left pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity" tabIndex={-1} />
                 </div>
               </div>
-
             </div>
           </div>
           {isDesktop && <NextArrow />}
         </section>
 
-        {/* ══════════════════════════════════════
-            BLOCO 4 — CONTATO
-        ══════════════════════════════════════ */}
         <section id="contact" className={`w-full relative bg-black flex flex-col overflow-hidden border-t border-gray-900/50 ${isDesktop ? 'h-screen' : 'min-h-[100svh]'}`}>
           {isDesktop && <PrevArrow />}
-
           <div className={`flex-1 flex flex-col justify-center px-6 lg:px-12 max-w-screen-2xl mx-auto w-full ${isDesktop ? 'pt-10 2xl:pt-16' : 'pt-24 pb-8'}`}>
-
-          
             <div className="mb-6 lg:mb-6 2xl:mb-10 w-full">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[5rem] font-bold text-white tracking-tight mb-2 lg:mb-4 leading-[1.1]">
                 {t.contact.title}
               </h2>
               <p className="text-sm lg:text-base 2xl:text-xl text-gray-400 font-light max-w-3xl">{t.contact.desc}</p>
             </div>
-
-            {/* Form + Conexões */}
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 2xl:gap-24 items-start w-full">
-
-              {/* Form */}
               <div className="w-full flex flex-col space-y-4 2xl:space-y-5">
                 <h3 className="text-lg lg:text-xl 2xl:text-3xl font-bold text-white">{t.contact.form_title}</h3>
-
                 <form onSubmit={handleSubmit} className="space-y-3 2xl:space-y-4">
                   <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_KEY} />
                   <div className="grid sm:grid-cols-2 gap-3 2xl:gap-4">
@@ -757,11 +696,8 @@ function App() {
                   </button>
                 </form>
               </div>
-
-              {/* Conexões */}
               <div className="w-full flex flex-col space-y-4 2xl:space-y-5 mt-4 lg:mt-0">
                 <h3 className="text-lg lg:text-xl 2xl:text-3xl font-bold text-white">{t.contact.connect}</h3>
-
                 <a href="mailto:contato@molinadev.com.br"
                   className="group block bg-[#080808] border border-gray-800 hover:border-white rounded-xl 2xl:rounded-2xl p-4 lg:p-5 2xl:p-7 transition-all duration-300 w-full">
                   <div className="flex items-center gap-4 2xl:gap-5">
@@ -774,7 +710,6 @@ function App() {
                     </div>
                   </div>
                 </a>
-
                 <a href="https://www.linkedin.com/in/molinaiago" target="_blank" rel="noreferrer"
                   className="group block bg-[#080808] border border-gray-800 hover:border-[#0A66C2] rounded-xl 2xl:rounded-2xl p-4 lg:p-5 2xl:p-7 transition-all duration-300 w-full">
                   <div className="flex items-center gap-4 2xl:gap-5">
@@ -788,11 +723,8 @@ function App() {
                   </div>
                 </a>
               </div>
-
             </div>
           </div>
-
-          {/* Footer */}
           <footer className="w-full text-center py-1 border-t border-gray-900 bg-[#050505] shrink-0 z-[100] mt-auto">
             <div className="flex items-center justify-center gap-2 2xl:gap-3">
               <img src="/logo.svg" alt="Logo Molina" className="w-20 h-20 2xl:w-28 2xl:h-28 object-contain" />
@@ -803,10 +735,8 @@ function App() {
             </div>
           </footer>
         </section>
-
       </div>
 
-      {/* Toast */}
       {showToast && (
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[200] animate-[fadeIn_0.3s_ease-out]">
           <div className="bg-purple-600 text-white px-5 py-2 2xl:px-6 2xl:py-3 rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.5)] border border-purple-400 flex items-center gap-3">
