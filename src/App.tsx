@@ -249,7 +249,7 @@ function App() {
   const [showToast, setShowToast] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // desktop = lg (1024px+), usamos scroll por seção apenas lá
+  // desktop = lg (1024px+)
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -407,7 +407,7 @@ function App() {
               ))}
             </div>
 
-            {/* Logo molina.dev */}
+            {/* Logo  */}
             <div className="font-bold text-xl md:text-2xl lg:text-3xl tracking-tight cursor-pointer flex select-none shrink-0" onClick={handleLogoClick} title="Easter Egg 👀">
               {"molina.dev".split('').map((char, i) => {
                 const isDev = i >= 6;
@@ -426,7 +426,7 @@ function App() {
             </div>
           </div>
 
-          {/* Centro: Links (Apenas Desktop - fixos no centro exato da navbar) */}
+          {/* Centro: Links  */}
           <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 gap-6 xl:gap-10 font-medium text-sm xl:text-base 2xl:text-lg text-gray-400 z-40">
             {(['home', 'about', 'services', 'projects', 'contact'] as const).map((item, idx) => (
               <button key={item} onClick={() => navigateTo(idx, item)} className={`hover:text-purple-400 transition-colors ${activeSection === idx ? 'text-purple-500' : ''}`}>
@@ -493,7 +493,7 @@ function App() {
 
           <div className="px-6 lg:px-12 max-w-screen-2xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-10 2xl:gap-16 items-center w-full">
 
-            {/* Texto hero - OTIMIZADO PARA NOTEBOOK (lg) */}
+            {/* texto hero */}
             <div className="flex-1 space-y-4 lg:space-y-5 2xl:space-y-6 w-full z-10 text-center lg:text-left">
               <h1 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-6xl 2xl:text-7xl font-extrabold text-white leading-[1.1] tracking-tight">
                 <span className="block">{t.hero.s1}</span>
@@ -509,7 +509,7 @@ function App() {
               </div>
             </div>
 
-            {/* Diagrama API CORE - TAMANHO CONTROLADO */}
+            {/* Diagrama API CORE */}
             <div className="flex flex-1 justify-center w-full relative items-center mt-6 lg:mt-0">
               <div className="relative w-full max-w-[260px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[360px] xl:max-w-[420px] 2xl:max-w-[540px] aspect-square flex items-center justify-center mx-auto">
 
@@ -553,7 +553,7 @@ function App() {
           <div className="px-6 lg:px-12 max-w-screen-2xl mx-auto w-full">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-8 xl:gap-12 2xl:gap-24 relative">
 
-              {/* Coluna esquerda - Ajuste responsivo na altura */}
+              {/* Coluna esquerda */}
               <div onMouseEnter={() => setHoveredSection('about')} onMouseLeave={() => setHoveredSection(null)}
                 className={`transition-all duration-700 ${hoveredSection === 'skills' ? 'lg:blur-md lg:opacity-10 lg:grayscale' : 'opacity-100'} cursor-default flex flex-col justify-center`}
               >
@@ -576,7 +576,7 @@ function App() {
                 </div>
               </div>
 
-              {/* Coluna direita - Reduzido em LG */}
+              {/* Coluna direita */}
               <div onMouseEnter={() => setHoveredSection('skills')} onMouseLeave={() => setHoveredSection(null)}
                 className={`bg-[#080808] border border-gray-900/50 p-6 lg:p-6 xl:p-8 2xl:p-12 rounded-3xl flex flex-col justify-center transition-all duration-700 ${hoveredSection === 'about' ? 'lg:blur-md lg:opacity-10 lg:grayscale lg:scale-95' : 'opacity-100 scale-100'} hover:border-purple-500/40 cursor-default shadow-2xl`}
               >
@@ -602,7 +602,6 @@ function App() {
           {isDesktop && <PrevArrow />}
           <div className="px-6 lg:px-12 max-w-screen-2xl mx-auto w-full">
 
-            {/* Pipeline - Otimizado em margens */}
             <div className="mb-6 lg:mb-8 2xl:mb-12">
               <h3 className="text-lg lg:text-xl 2xl:text-2xl font-bold text-white mb-4 2xl:mb-6 tracking-wider">{t.services.step_title}</h3>
               <div className="grid sm:grid-cols-3 gap-4 lg:gap-6 2xl:gap-8">
@@ -702,7 +701,7 @@ function App() {
 
           <div className={`flex-1 flex flex-col justify-center px-6 lg:px-12 max-w-screen-2xl mx-auto w-full ${isDesktop ? 'pt-10 2xl:pt-16' : 'pt-24 pb-8'}`}>
 
-            {/* Título - Ajustado radicalmente para caber no notebook */}
+          
             <div className="mb-6 lg:mb-6 2xl:mb-10 w-full">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[5rem] font-bold text-white tracking-tight mb-2 lg:mb-4 leading-[1.1]">
                 {t.contact.title}
@@ -775,7 +774,7 @@ function App() {
             </div>
           </div>
 
-          {/* Footer (Aparece no final do Contact) */}
+          {/* Footer */}
           <footer className="w-full text-center py-1 border-t border-gray-900 bg-[#050505] shrink-0 z-[100] mt-auto">
             <div className="flex items-center justify-center gap-2 2xl:gap-3">
               <img src="/logo.svg" alt="Logo Molina" className="w-20 h-20 2xl:w-28 2xl:h-28 object-contain" />
