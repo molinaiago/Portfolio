@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  /* Nossa Paleta Premium */
+  --color-brand-dark: #190019;
+  --color-brand-purple-deep: #2B124C;
+  --color-brand-purple: #522B5B;
+  --color-brand-mauve: #854F6C;
+  --color-brand-rose: #DFB6B2;
+  --color-brand-light: #FBE4D8;
+  
+  /* Fonte */
+  --font-sans: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--color-brand-light);
+  color: var(--color-brand-dark);
+  -webkit-font-smoothing: antialiased;
+}

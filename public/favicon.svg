@@ -1,0 +1,27 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="purpleGradient" x1="80" y1="60" x2="420" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C084FC"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+
+
+  <!-- Big M -->
+  <path
+    d="
+      M110 390
+      V110
+      L250 250
+      L390 110
+      V390
+      L320 390
+      V225
+      L250 295
+      L180 225
+      V390
+      Z
+    "
+    fill="url(#purpleGradient)"
+  />
+</svg>

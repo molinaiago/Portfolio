@@ -1,0 +1,70 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="purpleGradient" x1="120" y1="80" x2="380" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C084FC"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background só descomentar -->
+  <!-- <rect width="500" height="500" rx="40" fill="#050505"/> -->
+
+  <!-- Left Brace -->
+  <path
+    d="M145 120
+       C115 120 100 140 100 170
+       V210
+       C100 235 85 250 65 250
+       C85 250 100 265 100 290
+       V330
+       C100 360 115 380 145 380"
+    stroke="url(#purpleGradient)"
+    stroke-width="24"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+    filter="url(#glow)"
+  />
+
+  <!-- Right Brace -->
+  <path
+    d="M355 120
+       C385 120 400 140 400 170
+       V210
+       C400 235 415 250 435 250
+       C415 250 400 265 400 290
+       V330
+       C400 360 385 380 355 380"
+    stroke="url(#purpleGradient)"
+    stroke-width="24"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+    filter="url(#glow)"
+  />
+
+  <!-- M Logo -->
+  <path
+    d="M170 350
+       V150
+       L250 235
+       L330 150
+       V350
+       L290 320
+       V240
+       L250 280
+       L210 240
+       V320
+       Z"
+    fill="url(#purpleGradient)"
+    filter="url(#glow)"
+  />
+</svg>
