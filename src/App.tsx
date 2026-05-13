@@ -101,7 +101,8 @@ const translations = {
       APEX: { title: "Oracle APEX", desc: "Low-code enterprise grade." },
       DB: { title: "Database", desc: "PL/SQL, Tuning e Modelagem." },
       SENSEDIA: { title: "Sensedia", desc: "API Gateway e Governança." },
-      FULLSTACK: { title: "Full Stack", desc: "Node.js, Java, React." }
+      FULLSTACK: { title: "Full Stack", desc: "Node.js, Java, React." },
+      API_ARCH: { title: "API Architecture", desc: "Design e consumo de APIs RESTful e SOAP em sistemas legados e modernos." }
     }
   },
   US: {
@@ -169,11 +170,12 @@ const translations = {
       APEX: { title: "Oracle APEX", desc: "Low-code enterprise grade." },
       DB: { title: "Database", desc: "PL/SQL, Tuning and Modeling." },
       SENSEDIA: { title: "Sensedia", desc: "API Gateway & Governance." },
-      FULLSTACK: { title: "Full Stack", desc: "Node.js, Java, React." }
+      FULLSTACK: { title: "Full Stack", desc: "Node.js, Java, React." },
+      API_ARCH: { title: "API Architecture", desc: "Design and consumption of RESTful and SOAP APIs in legacy and modern systems." }
     }
   },
   ES: {
-    nav: { home: "Inicio", about: "Sobre mí", services: "Servicios", projects: "Proyectos", contact: "Contacto" },
+    nav: { home: "Inicio", about: "Sobre mí", services: "Servicios", proyectos: "Proyectos", contact: "Contacto" },
     hero: {
       s1: "Yo pienso.", s2: "Yo construyo.", s3: "Yo entrego.", stype: "Tú usas.",
       desc: "Desarrollador Full Stack y Arquitecto de Integraciones. Transformo desafíos corporativos complejos en ecosistemas escalables y seguros.",
@@ -200,7 +202,7 @@ const translations = {
       ],
       do_title: "LO QUE HAGO",
       cards: [
-        { title: "Oracle Integration Cloud", desc: "Orquestación y automatización de flujos críticos conectando herramientas en la nube." },
+        { title: "Oracle Integration Cloud", desc: "Orquestración y automatización de flujos críticos conectando herramientas en la nube." },
         { title: "Arquitectura Low-Code", desc: "Desarrollo ágil de aplicaciones corporativas utilizando Oracle APEX con alta seguridad." },
         { title: "API Management & Gateways", desc: "Exposición y migración de APIs heredadas utilizando arquitecturas como Sensedia y ORDS." },
         { title: "Desarrollo Full Stack", desc: "Construcción de plataformas desde bases de datos relacionales hasta frontends modernos." },
@@ -237,7 +239,8 @@ const translations = {
       APEX: { title: "Oracle APEX", desc: "Low-code enterprise grade." },
       DB: { title: "Database", desc: "PL/SQL, Tuning y Modelado." },
       SENSEDIA: { title: "Sensedia", desc: "API Gateway y Gobernanza." },
-      FULLSTACK: { title: "Full Stack", desc: "Node.js, Java, React." }
+      FULLSTACK: { title: "Full Stack", desc: "Node.js, Java, React." },
+      API_ARCH: { title: "API Architecture", desc: "Diseño y consumo de APIs RESTful y SOAP en sistemas heredados y modernos." }
     }
   }
 };
@@ -386,9 +389,10 @@ function App() {
     { id: 'APEX' as const,        label: 'APEX',     top: '50%', left: '95%' },
     { id: 'DB' as const,          label: 'DB',       top: '85%', left: '85%' },
     { id: 'SENSEDIA' as const,    label: 'SENSEDIA', top: '95%', left: '50%' },
-    { id: 'FULLSTACK' as const,  label: 'NODE.JS',  top: '85%', left: '15%' },
-    { id: 'FULLSTACK' as const,  label: 'REACT',     top: '50%', left: '5%'  },
-    { id: 'FULLSTACK' as const,  label: 'JAVA',      top: '15%', left: '15%' },
+    { id: 'FULLSTACK' as const,   label: 'NODE.JS',  top: '85%', left: '15%' },
+    { id: 'FULLSTACK' as const,   label: 'REACT',    top: '50%', left: '5%'  },
+    { id: 'FULLSTACK' as const,   label: 'JAVA',     top: '15%', left: '15%' },
+    { id: 'API_ARCH' as const,    label: 'REST/SOAP', top: '30%', left: '10%' },
   ];
 
   return (
