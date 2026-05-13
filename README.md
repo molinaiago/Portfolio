@@ -1,73 +1,46 @@
-# React + TypeScript + Vite
+🚀 Portfolio | molinadev.com.br
+Este é o meu portfolio pessoal, focado em demonstrar minha expertise como Full Stack Developer e Arquiteto de Integrações. O projeto foi construído para ser de altíssima performance, utilizando as melhores práticas de desenvolvimento web moderno.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🛠️ Stack Tecnológica
+Frontend: React + TypeScript + Vite
 
-Currently, two official plugins are available:
+Estilização: Tailwind CSS (Mobile First)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Animações: Framer Motion & CSS keyframes
 
-## React Compiler
+Deploy: Cloudflare Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Integração: Web3Forms (Processamento de formulários via AJAX)
 
-## Expanding the ESLint configuration
+🏗️ Arquitetura e Diferenciais
+O projeto não é apenas um site estático, ele reflete minha abordagem técnica:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Ecossistema Enterprise: Foco em tecnologias como Oracle Integration Cloud (OIC), APEX e bancos de dados robustos.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Applied AI: Implementação visual de conceitos de IA e orquestração de sistemas.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Performance: Build otimizado via Vite para carregamento instantâneo.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Experiência do Usuário: Interface multilíngue (BR/US/ES) e easter eggs interativos no código.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+📁 Estrutura do Projeto
+/src/App.tsx: O core da aplicação, contendo a lógica de seções, estados e traduções.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+/public: Assets estáticos, incluindo o favicon terminal em SVG.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+/src/index.css: Configurações globais de Tailwind e fontes.
+
+🚀 Como rodar o projeto localmente
+Clone o repositório:
+
+Bash
+git clone https://github.com/molinaiago/Portfolio.git
+Instale as dependências:
+
+Bash
+npm install
+Inicie o servidor de desenvolvimento:
+
+Bash
+npm run dev
+Desenvolvido por Molina | LinkedIn | Site Oficial
