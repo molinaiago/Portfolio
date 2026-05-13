@@ -384,15 +384,15 @@ function App() {
   );
 
   const apiNodes = [
-    { id: 'IA' as const,          label: 'IA',       top: '5%',  left: '50%' },
-    { id: 'OIC' as const,         label: 'OIC',      top: '15%', left: '85%' },
-    { id: 'APEX' as const,        label: 'APEX',     top: '50%', left: '95%' },
-    { id: 'DB' as const,          label: 'DB',       top: '85%', left: '85%' },
-    { id: 'SENSEDIA' as const,    label: 'SENSEDIA', top: '95%', left: '50%' },
-    { id: 'FULLSTACK' as const,   label: 'NODE.JS',  top: '85%', left: '15%' },
-    { id: 'FULLSTACK' as const,   label: 'REACT',    top: '50%', left: '5%'  },
-    { id: 'FULLSTACK' as const,   label: 'JAVA',     top: '15%', left: '15%' },
-    { id: 'API_ARCH' as const,    label: 'REST/SOAP', top: '30%', left: '10%' },
+    { id: 'IA' as const,          label: 'IA',        top: '5%',   left: '50%' },
+    { id: 'OIC' as const,         label: 'OIC',       top: '15%',  left: '85%' },
+    { id: 'APEX' as const,        label: 'APEX',      top: '50%',  left: '95%' },
+    { id: 'DB' as const,          label: 'DB',        top: '85%',  left: '85%' },
+    { id: 'SENSEDIA' as const,    label: 'SENSEDIA',  top: '95%',  left: '50%' },
+    { id: 'FULLSTACK' as const,   label: 'NODE.JS',   top: '85%',  left: '15%' },
+    { id: 'FULLSTACK' as const,   label: 'REACT',     top: '60%',  left: '5%'  },
+    { id: 'API_ARCH' as const,    label: 'REST/SOAP', top: '35%',  left: '5%'  },
+    { id: 'FULLSTACK' as const,   label: 'JAVA',      top: '15%',  left: '15%' },
   ];
 
   return (
