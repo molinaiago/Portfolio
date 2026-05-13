@@ -766,7 +766,7 @@ function App() {
                     </div>
                     <div>
                       <div className="text-white font-bold text-lg lg:text-xl 2xl:text-2xl mb-0.5 lg:mb-1">E-mail Direto</div>
-                      <div className="text-gray-500 font-mono text-[10px] lg:text-xs 2xl:text-sm">molinakmargo@hotmail.com</div>
+                      <div className="text-gray-500 font-mono text-[10px] lg:text-xs 2xl:text-sm">contato@molinadev.com.br</div>
                     </div>
                   </div>
                 </a>
