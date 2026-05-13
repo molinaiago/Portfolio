@@ -38,3 +38,11 @@ O projeto não é apenas um site estático, ele reflete minha abordagem técnica
 1. **Clone o repositório:**
    ```bash
    git clone https://github.com/molinaiago/Portfolio.git
+
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   
+3. **Rode localmente:**
+   ```bash
+   npm run dev
