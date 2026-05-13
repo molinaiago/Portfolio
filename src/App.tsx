@@ -394,31 +394,27 @@ function App() {
   return (
     <div className={`w-full bg-black text-gray-300 selection:bg-purple-600 selection:text-white relative font-sans ${isDesktop ? 'h-screen overflow-hidden' : 'min-h-screen overflow-x-hidden'}`}>
 
-      {/* ── NAVBAR CORRIGIDA (FLEX-BETWEEN REAL) ── */}
+     {/* ── NAVBAR CORRIGIDA ── */}
       <header className="fixed top-0 w-full z-[100] bg-black/80 backdrop-blur-md border-b border-gray-900">
         <nav className="h-16 md:h-20 lg:h-20 2xl:h-24 flex items-center justify-between px-6 lg:px-12 max-w-screen-2xl mx-auto w-full relative">
 
-          {/* Esquerda: Seletor Mobile + Logo */}
-          <div className="flex items-center gap-4 z-50">
-            {/* Seletor Mobile (aparece até lg) */}
+          {/* 1. ESQUERDA: Seletor Mobile ou Logo Desktop */}
+          <div className="flex items-center z-50">
+            {/* Seletor Mobile (SOME no desktop) */}
             <div className="flex lg:hidden gap-2 text-xs font-mono font-bold bg-gray-900/50 px-3 py-1.5 rounded-full border border-gray-800 shrink-0">
               {(['BR', 'US', 'ES'] as Language[]).map(l => (
                 <button key={l} onClick={() => setLang(l)} className={`transition-colors ${lang === l ? 'text-purple-400' : 'text-gray-500'}`}>{l}</button>
               ))}
             </div>
 
-            {/* Logo  */}
-            <div className="font-bold text-xl md:text-2xl lg:text-3xl tracking-tight cursor-pointer flex select-none shrink-0" onClick={handleLogoClick} title="Easter Egg 👀">
+            {/* Logo Desktop (Fica na ESQUERDA, SOME no mobile) */}
+            <div className="hidden lg:flex font-bold text-3xl tracking-tight cursor-pointer select-none shrink-0" onClick={handleLogoClick} title="Easter Egg 👀">
               {"molina.dev".split('').map((char, i) => {
                 const isDev = i >= 6;
                 const jiggleX = !isShattered && logoClicks >= 3 ? (Math.random() - 0.5) * (logoClicks * 1.5) : 0;
                 const jiggleY = !isShattered && logoClicks >= 3 ? (Math.random() - 0.5) * (logoClicks * 1.5) : 0;
                 return (
-                  <span key={i} className={`inline-block transition-all duration-[800ms] ${isDev ? 'text-purple-500' : 'text-white'}`}
-                    style={{
-                      transform: isShattered ? `translate(${shatterConfig[i].x}px, ${shatterConfig[i].y}px) rotate(${shatterConfig[i].rot}deg)` : `translate(${jiggleX}px, ${jiggleY}px)`,
-                      opacity: isShattered ? 0 : 1,
-                    }}>
+                  <span key={i} className={`inline-block transition-all duration-[800ms] ${isDev ? 'text-purple-500' : 'text-white'}`} style={{ transform: isShattered ? `translate(${shatterConfig[i].x}px, ${shatterConfig[i].y}px) rotate(${shatterConfig[i].rot}deg)` : `translate(${jiggleX}px, ${jiggleY}px)`, opacity: isShattered ? 0 : 1 }}>
                     {char}
                   </span>
                 );
@@ -426,16 +422,34 @@ function App() {
             </div>
           </div>
 
-          {/* Centro: Links  */}
-          <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 gap-6 xl:gap-10 font-medium text-sm xl:text-base 2xl:text-lg text-gray-400 z-40">
-            {(['home', 'about', 'services', 'projects', 'contact'] as const).map((item, idx) => (
-              <button key={item} onClick={() => navigateTo(idx, item)} className={`hover:text-purple-400 transition-colors ${activeSection === idx ? 'text-purple-500' : ''}`}>
-                {t.nav[item]}
-              </button>
-            ))}
+          {/* 2. CENTRO ABSOLUTO:*/}
+          <div className="absolute left-1/2 -translate-x-1/2 z-40 flex items-center justify-center">
+            
+            {/* Logo Mobile  */}
+            <div className="flex lg:hidden font-bold text-xl md:text-2xl tracking-tight cursor-pointer select-none shrink-0" onClick={handleLogoClick} title="Easter Egg 👀">
+              {"molina.dev".split('').map((char, i) => {
+                const isDev = i >= 6;
+                const jiggleX = !isShattered && logoClicks >= 3 ? (Math.random() - 0.5) * (logoClicks * 1.5) : 0;
+                const jiggleY = !isShattered && logoClicks >= 3 ? (Math.random() - 0.5) * (logoClicks * 1.5) : 0;
+                return (
+                  <span key={`mob-${i}`} className={`inline-block transition-all duration-[800ms] ${isDev ? 'text-purple-500' : 'text-white'}`} style={{ transform: isShattered ? `translate(${shatterConfig[i].x}px, ${shatterConfig[i].y}px) rotate(${shatterConfig[i].rot}deg)` : `translate(${jiggleX}px, ${jiggleY}px)`, opacity: isShattered ? 0 : 1 }}>
+                    {char}
+                  </span>
+                );
+              })}
+            </div>
+
+            {/* Links Desktop (Fica no CENTRO, SOME no mobile) */}
+            <div className="hidden lg:flex gap-6 xl:gap-10 font-medium text-sm xl:text-base 2xl:text-lg text-gray-400">
+              {(['home', 'about', 'services', 'projects', 'contact'] as const).map((item, idx) => (
+                <button key={item} onClick={() => navigateTo(idx, item)} className={`hover:text-purple-400 transition-colors ${activeSection === idx ? 'text-purple-500' : ''}`}>
+                  {t.nav[item]}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Direita: Seletor Desktop ou Hambúrguer Mobile */}
+          {/* 3. DIREITA: Seletor Desktop ou Hambúrguer Mobile */}
           <div className="flex items-center justify-end z-50">
             {/* Seletor Desktop */}
             <div className="hidden lg:flex gap-3 text-xs xl:text-sm font-mono font-bold bg-gray-900/50 px-4 py-2 rounded-full border border-gray-800">
@@ -458,7 +472,7 @@ function App() {
 
         </nav>
 
-        {/* Menu mobile overlay */}
+        {/* Menu mobile */}
         {isMobileMenuOpen && (
           <div className="lg:hidden fixed inset-0 top-16 bg-[#050505] flex flex-col items-center justify-center gap-10 z-[90]">
             {(['home', 'about', 'services', 'projects', 'contact'] as const).map((item, idx) => (
