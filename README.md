@@ -1,73 +1,48 @@
-# React + TypeScript + Vite
+# 🚀 Portfolio | molinadev.com.br
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o meu portfolio pessoal, focado em demonstrar minha expertise como **Full Stack Developer** e **Arquiteto de Integrações**. O projeto foi construído para ser de altíssima performance, utilizando as melhores práticas de desenvolvimento web moderno.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Stack Tecnológica
 
-## React Compiler
+*   **Frontend**: React + TypeScript + Vite
+*   **Estilização**: Tailwind CSS (Mobile First)
+*   **Animações**: Framer Motion & CSS keyframes
+*   **Deploy**: Cloudflare Pages
+*   **Integração**: Web3Forms (Processamento de formulários via AJAX)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🏗️ Arquitetura e Diferenciais
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+O projeto não é apenas um site estático, ele reflete minha abordagem técnica:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+*   **Ecossistema Enterprise**: Foco em tecnologias como Oracle Integration Cloud (OIC), APEX e bancos de dados robustos.
+*   **Applied AI**: Implementação visual de conceitos de IA e orquestração de sistemas.
+*   **Performance**: Build otimizado via Vite para carregamento instantâneo.
+*   **Experiência do Usuário**: Interface multilíngue (BR/US/ES) e easter eggs interativos no código.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📁 Estrutura do Projeto
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+*   **`/src/App.tsx`**: O core da aplicação, contendo a lógica de seções, estados e traduções.
+*   **`/public`**: Assets estáticos, incluindo o favicon terminal em SVG.
+*   **`/src/index.css`**: Configurações globais de Tailwind e fontes.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Como rodar o projeto localmente
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/molinaiago/Portfolio.git
+
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   
+3. **Rode localmente:**
+   ```bash
+   npm run dev
