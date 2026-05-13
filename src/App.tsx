@@ -740,7 +740,7 @@ const [shatterConfig] = useState(() =>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Chave de Acesso Web3Forms */}
-                  <input type="hidden" name="access_key" value="82ad5bdb-13f1-4530-acff-973f3d2ac902" />
+                  <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_KEY} />
                   
                   {/* Campos do Form */}
                   <div className="grid md:grid-cols-2 gap-6">
