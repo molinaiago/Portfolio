@@ -758,7 +758,7 @@ function App() {
               <div className="w-full flex flex-col space-y-4 2xl:space-y-5 mt-4 lg:mt-0">
                 <h3 className="text-lg lg:text-xl 2xl:text-3xl font-bold text-white">{t.contact.connect}</h3>
 
-                <a href="mailto:molinakmargo@hotmail.com"
+                <a href="mailto:contato@molinadev.com.br"
                   className="group block bg-[#080808] border border-gray-800 hover:border-white rounded-xl 2xl:rounded-2xl p-4 lg:p-5 2xl:p-7 transition-all duration-300 w-full">
                   <div className="flex items-center gap-4 2xl:gap-5">
                     <div className="w-12 h-12 lg:w-14 lg:h-14 2xl:w-16 2xl:h-16 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-300 shrink-0">
