@@ -24,9 +24,9 @@ const Typewriter = ({ text }: { text: string }) => {
   }, [displayedText, isDeleting, text]);
 
   return (
-    <span className="text-purple-500 relative">
+    <span className="text-purple-500 inline-flex items-center min-h-[1em]">
       {displayedText}
-      <span className="animate-pulse ml-1 absolute -right-3 md:-right-6 border-r-4 border-purple-500 h-full"></span>
+      <span className="animate-pulse ml-1 border-r-4 border-purple-500 h-[1em] inline-block"></span>
     </span>
   );
 };
@@ -178,14 +178,14 @@ const translations = {
     nav: { home: "Inicio", about: "Sobre mí", services: "Servicios", projects: "Proyectos", contact: "Contacto" },
     hero: {
       s1: "Yo pienso.", s2: "Yo construyo.", s3: "Yo entrego.", stype: "Tú usas.",
-      desc: "Desarrollador Full Stack y Arquitecto de Integraciones. Transformo desafíos corporativos complejos en ecosistemas escalables y seguros.",
+      desc: "Desarrollador Full Stack y Arquitecto de Integraciones. Transformo desafíos corporativos complejos em ecossistemas escalables y seguros.",
       tags: "Fullstack · Oracle Expert · Applied AI · Node.js · React · Java"
     },
     about: {
       title: "Ingeniería de Software de Alto Impacto",
       subtitle: "No solo escribo código. Orquesto ecosistemas.",
       bullets: [
-        { label: "Experiencia Comprobada", text: "Más de 4 años en la primera línea de proyectos críticos para gigantes del mercado como Unimed e CPFL." },
+        { label: "Experiencia Comprobada", text: "Más de 4 anos en la primera línea de proyectos críticos para gigantes del mercado como Unimed e CPFL." },
         { label: "El Núcleo del Negocio", text: "Experto en construir puentes seguros entre sistemas heredados y soluciones modernas en la nube." },
         { label: "Enfoque en el Rendimiento", text: "Diseñando arquitecturas de APIs con Sensedia y ORDS, resolviendo cuellos de botella." }
       ],
@@ -198,14 +198,14 @@ const translations = {
       steps: [
         { num: "/01", title: "Análisis Arquitectónico", desc: "Mapeo de tu cuello de botella, definición del alcance técnico y viabilidade." },
         { num: "/02", title: "Desarrollo del Core", desc: "Creación de la arquitectura y automatización utilizando tecnología Enterprise-grade." },
-        { num: "/03", title: "Deploy y Monitoreo", desc: "Entrega documentada con garantía de estabilidad, seguridad y sin sorpresas." }
+        { num: "/03", title: "Deploy y Monitoreo", desc: "Entrega documentada con garantia de estabilidad, seguridad y sin sorpresas." }
       ],
       do_title: "LO QUE HAGO",
       cards: [
         { title: "Oracle Integration Cloud", desc: "Orquestración y automatización de flujos críticos conectando herramientas en la nube." },
         { title: "Arquitectura Low-Code", desc: "Desarrollo ágil de aplicaciones corporativas utilizando Oracle APEX con alta seguridad." },
-        { title: "API Management & Gateways", desc: "Exposición y migración de APIs heredadas utilizando arquitecturas como Sensedia y ORDS." },
-        { title: "Desarrollo Full Stack", desc: "Construcción de plataformas desde bases de datos relacionales hasta frontends modernos." },
+        { title: "API Management & Gateways", desc: "Exposición y migração de APIs heredadas utilizando arquitecturas como Sensedia y ORDS." },
+        { title: "Desarrollo Full Stack", desc: "Construcción de plataformas desde bases de dados relacionales hasta frontends modernos." },
         { title: "IA Aplicada", desc: "Integración de LLMs y OCI AI Vector Search para automatizar decisiones basadas en datos." },
         { title: "Sincronización de Ecosistemas", desc: "Integraciones pesadas entre ERPs, CRMs y sistemas logísticos vía REST/SOAP." }
       ]
@@ -229,16 +229,16 @@ const translations = {
       title: "Construyamos el siguiente nivel.",
       desc: "Trae tu desafío de arquitectura o integración. Respondo rápido.",
       form_title: "Enviar un mensaje",
-      form: { name: "Tu nombre", email: "Correo de contacto", msg: "Cuéntame sobre el proyecto actual...", btn: "Enviar Mensagem" },
+      form: { name: "Tu nome", email: "Correo de contacto", msg: "Cuéntame sobre el proyecto actual...", btn: "Enviar Mensagem" },
       connect: "Conexiones Directas"
     },
     footer: "think. build. deliver.",
     nodes: {
-      IA: { title: "Applied AI", desc: "Automatización y OCI AI Vector Search." },
-      OIC: { title: "Oracle OIC", desc: "Orquestración de sistemas en la nube." },
+      IA: { title: "Applied AI", desc: "Automatização e OCI AI Vector Search." },
+      OIC: { title: "Oracle OIC", desc: "Orquestração de sistemas em nuvem." },
       APEX: { title: "Oracle APEX", desc: "Low-code enterprise grade." },
-      DB: { title: "Database", desc: "PL/SQL, Tuning y Modelado." },
-      SENSEDIA: { title: "Sensedia", desc: "API Gateway y Governança." },
+      DB: { title: "Database", desc: "PL/SQL, Tuning e Modelagem." },
+      SENSEDIA: { title: "Sensedia", desc: "API Gateway e Governança." },
       FULLSTACK: { title: "Full Stack", desc: "Node.js, Java, React." },
       API_ARCH: { title: "API Architecture", desc: "Diseño y consumo de APIs RESTful e SOAP en sistemas legados y modernos." },
       ERP: { title: "Ecosystem Sync", desc: "Integraciones pesadas entre ERPs, CRMs y sistemas logísticos vía REST/SOAP." }
