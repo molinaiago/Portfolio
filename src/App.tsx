@@ -460,7 +460,7 @@ function App() {
 
         {/* Menu mobile overlay */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 top-16 bg-black/98 backdrop-blur-xl flex flex-col items-center justify-center gap-10 z-[90]">
+          <div className="lg:hidden fixed inset-0 top-16 bg-[#050505] flex flex-col items-center justify-center gap-10 z-[90]">
             {(['home', 'about', 'services', 'projects', 'contact'] as const).map((item, idx) => (
               <button key={item} onClick={() => navigateTo(idx, item)} className="text-2xl font-bold text-white hover:text-purple-500 transition-colors">
                 {t.nav[item]}
